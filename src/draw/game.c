@@ -128,7 +128,7 @@ int draw_game(game_state *state, int ch) {
     attroff(A_BOLD);
 
     // write help note at bottom
-    mvprintw(LINES - 1, centerx(game_help_note), game_help_note);
+    mvprintw(LINES - 1, centerx(game_help_note), "%s", game_help_note);
 
     return 0;
 }

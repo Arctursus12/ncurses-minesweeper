@@ -82,30 +82,30 @@ int draw_title_screen(game_state *state, int ch) {
     if (COLS > 130 && LINES > 18) {
         for (int i = 0; i < 7; i++) {
             const char *this_splash = title_screen_splash[i];
-            mvprintw(centery() - 6 + i, centerx(this_splash), this_splash);
+            mvprintw(centery() - 6 + i, centerx(this_splash), "%s", this_splash);
             vdisplace = 2;
         }
     } else if (COLS > 85 && LINES > 14) {
         for (int i = 0; i < 5; i++) {
             const char *this_splash = title_screen_splash_small[i];
-            mvprintw(centery() - 5 + i, centerx(this_splash), this_splash);
+            mvprintw(centery() - 5 + i, centerx(this_splash), "%s", this_splash);
             vdisplace = 1;
         }
     } else {
-        mvprintw(centery() - 3, centerx(title_screen_splash_text), title_screen_splash_text);
+        mvprintw(centery() - 3, centerx(title_screen_splash_text), "%s", title_screen_splash_text);
         vdisplace = -1;
     }
 
     // draw button inputs
     for (int i = 0; i < 5; i++) {
         if (state->page_selection == i) attron(A_STANDOUT);
-        mvprintw(centery() + i + vdisplace, centerx(title_screen_buttons[i]), title_screen_buttons[i]);
+        mvprintw(centery() + i + vdisplace, centerx(title_screen_buttons[i]), "%s", title_screen_buttons[i]);
         if (state->page_selection == i) attroff(A_STANDOUT);
     }
     attroff(A_BOLD);
 
     // write copyright line @ bottom
-    mvprintw(LINES - 1, centerx(copyright_line), copyright_line);
+    mvprintw(LINES - 1, centerx(copyright_line), "%s", copyright_line);
 
     attroff(COLOR_PAIR(5));
 
