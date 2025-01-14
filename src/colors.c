@@ -11,7 +11,7 @@
 
 #include <ncurses.h>
 
-int init_colorpairs(void) {
+int init_colorpairs() {
     use_default_colors();
     start_color();
     init_pair(1, COLOR_BLUE, -1);
