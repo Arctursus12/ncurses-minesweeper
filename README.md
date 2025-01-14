@@ -1,3 +1,7 @@
+# Arc's Edit
+
+Forking this from the original project, and slowly converting it from C to C++, as much as it's possible. Original readme below.
+
 # ncurses Minesweeper
 
 Terminal game of Minesweeper, implemented in C with ncurses.
